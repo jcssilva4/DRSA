@@ -1,0 +1,35 @@
+#include "DRSA.h"
+
+DRSA::DRSA(int nObj, int nCrt, int* dirs, int nCls, float** f)
+{
+    this->nObj = nObj;
+    this->nCriteria = nCrt;
+    this->nClasses = nCls;
+    this->prefDir = dirs;
+    // create universe of objects
+    for (int i = 0; i < this->nObj; i++){
+        string name = "Object" + to_string(i+1);
+        this->Universe.push_back(new Obj(name, f[i], this->nCriteria));
+    }
+    /*
+    cout << "\n*****************************************\n";
+    cout << "number of objects: " << this->nObj << endl;
+    cout << "number of criteria: " << this->nCriteria << " [";
+    for (int q = 0; q < this->nCriteria; q++){
+        if(this->prefDir[q] > 0) cout << "max";
+        else cout << "min";
+        if(q < this->nCriteria-1)
+            cout << ",";
+    }
+    cout << "]\n";
+    cout << "number of classes: " << this->nCriteria;
+    cout << "\n*****************************************\n";
+    */
+}
+
+DRSA::~DRSA()
+{
+    cout << "\nDeleting DRSA vars...";
+    delete this->prefDir[]
+    //dtor
+}
